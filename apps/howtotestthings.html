@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=ru>
+	<head>
+		<meta charset="UTF-8">
+		<title>howtotestthings</title>
+	</head>
+	<body>
+		<h1>Как использовать мелкие тесты?</h1>
+		<h2>Файл ariths</h2>
+		<p>Это бинарный файл программы написаной на ассемблере под 64-битовую архитектуру процессоров x86.
+		<br>Чтобы его запустить достаточно написать ./ariths, но оно ничего не выдадет, потому что программа
+		<br>и не писалась так чтобы выдавать текст. Чтобы понять что в ней происходит её нужно открыть в gdb.</p>
+		<strong>
+		<br>$ gdb
+		<br>GNU gdb (Debian 13.1-3) 13.1
+		<br>Copyright (C) 2023 Free Software Foundation, Inc.
+		<br>License GPLv3+: GNU GPL version 3 or later "http://gnu.org/licenses/gpl.html"
+		<br>This is free software: you are free to change and redistribute it.
+		<br>There is NO WARRANTY, to the extent permitted by law.
+		<br>Type "show copying" and "show warranty" for details.
+		<br>This GDB was configured as "x86_64-linux-gnu".
+		<br>Type "show configuration" for configuration details.
+		<br>For bug reporting instructions, please see:
+		<br>"https://www.gnu.org/software/gdb/bugs/".
+		<br>Find the GDB manual and other documentation resources online at:
+		<br>    "http://www.gnu.org/software/gdb/documentation/".
+		<br>
+		<br>For help, type "help".
+		<br>Type "apropos word" to search for commands related to "word".
+		<br>(gdb) file ariths
+		<br>Reading symbols from ariths...
+		<br>(No debugging symbols found in ariths)
+		<br>(gdb) break *_start
+		<br>Breakpoint 1 at 0x401000
+		<br>(gdb) run
+		<br>Starting program: /home/yuriy/progs/testingthings/binaries/ariths 
+		<br>
+		<br>Breakpoint 1, 0x0000000000401000 in _start ()
+		<br>(gdb) disassemble
+		<br>Dump of assembler code for function _start:
+		<br>=> 0x0000000000401000 <+0>:	mov    $0xe,%r8d
+		<br>   0x0000000000401006 <+6>:	mov    $0xe,%r9d
+		<br>   0x000000000040100c <+12>:	add    %r9,%r8
+		<br>   0x000000000040100f <+15>:	mov    %r8,%r9
+		<br>   0x0000000000401012 <+18>:	syscall
+		<br>   0x0000000000401014 <+20>:	mov    $0x3c,%eax
+		<br>   0x0000000000401019 <+25>:	xor    %rdi,%rdi
+		<br>   0x000000000040101c <+28>:	syscall
+		<br>End of assembler dump.
+		<br>(gdb) stepi 3
+		<br>0x000000000040100f in _start ()
+		<br>(gdb) stepi
+		<br>0x0000000000401012 in _start ()
+		<br>(gdb) info registers
+		<br>rax            0x0                 0
+		<br>rbx            0x0                 0
+		<br>rcx            0x0                 0
+		<br>rdx            0x0                 0
+		<br>rsi            0x0                 0
+		<br>rdi            0x0                 0
+		<br>rbp            0x0                 0x0
+		<br>rsp            0x7fffffffe0f0      0x7fffffffe0f0
+		<br>r8             0x1c                28
+		<br>r9             0x1c                28
+		<br>r10            0x0                 0
+		<br>r11            0x0                 0
+		<br>r12            0x0                 0
+		<br>r13            0x0                 0
+		<br>r14            0x0                 0
+		<br>r15            0x0                 0
+		<br>rip            0x401012            0x401012 <_start+18>
+		<br>eflags         0x212               [ AF IF ]
+		<br>cs             0x33                51
+		<br>ss             0x2b                43
+		<br>ds             0x0                 0
+		<br>es             0x0                 0
+		<br>fs             0x0                 0
+		<br>gs             0x0                 0
+		<br>(gdb) </strong>
+	<p>Как вы видите по выдаче, программа записывает в r8 и r9 число 14, потом складывает r9 и r8,
+	<br>записывает получившееся значение в r9 и отправляет системный вызов для окончания программы ядру
+	<br>(но в отладчике пока до этого не дошли).</p>
+	<h2>Файл fpchi</h2>
+	<p>Из названия, кому то может быть понятно, что эта программа написанна на паскаль. Она просто пишет hello.</p>
+	<strong>$ ./fpchi
+	<br>hello </strong>
+	<h2>Файл ptr</h2>
+	<p>Ptr - pointer. Здесь происходит тест указателей, через указатель записывается значение по адресу
+	<br>в памяти переменной val, и читается из указателя значение, сохраняемое в rval. Указатель - paddr.</p>
+	<strong>$ ./ptr
+		<br>paddr=0x7fffc3452510, rval=1, val=1
+		<br>val? 23
+		<br>paddr=0x7fffc3452510, rval=23, val=23
+		<br>(C)ontinue or (e)xit? c
+		<br>con
+		<br>val? 68
+		<br>paddr=0x7fffc3452510, rval=68, val=68
+		<br>(C)ontinue or (e)xit? e </strong>
+	<h2>Файл test</h2>
+	<p>Программа, писанная на языке ассемблера, спрашивает чтобы мы ввели 8 символов (RET тоже символ)
+	<br>и возвращает их нам.</p>
+	<strong>$ ./test
+		<br>8 symb?1234567
+		<br>1234567</strong>
+	</body>
+</html>

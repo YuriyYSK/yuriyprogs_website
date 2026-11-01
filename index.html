@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>yuriyprogs global</title>
+	<style>
+.split-container {
+	display: flex;
+	margin-top: 20px;
+}
+.left-side {
+	width: 100px;
+	border-right: 1px solid black;
+	padding-right: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#right-side-start {
+	flex: 1;
+	padding-left: 25px;
+}
+
+#right-side-history {
+	flex: 1;
+	padding-left: 25px;
+}
+#right-side-progs {
+	flex: 1;
+	padding-left: 25px;
+}
+#right-side-posts {
+	flex: 1;
+	padding-left: 25px;
+}
+#right-side-videos {
+	flex: 1;
+	padding-left: 25px;
+}
+#right-side-support {
+	flex: 1;
+	padding-left: 25px;
+}
+body {
+	background-color: white;
+	color: black;
+}
+	</style>
+</head>
+<script>
+function show_support() {
+	document.getElementById("right-side-start").style.display = "none";
+	document.getElementById("right-side-history").style.display = "none";
+	document.getElementById("right-side-progs").style.display = "none";
+	document.getElementById("right-side-posts").style.display = "none";
+	document.getElementById("right-side-videos").style.display = "none";
+	document.getElementById("right-side-support").style.display = "flex";
+}
+function show_historyofauthor() {
+	document.getElementById("right-side-videos").style.display = "none";
+	document.getElementById("right-side-progs").style.display = "none";
+	document.getElementById("right-side-start").style.display = "none";
+	document.getElementById("right-side-posts").style.display = "none";
+	document.getElementById("right-side-support").style.display = "none";
+	
+	document.getElementById("right-side-history").style.display = "flex";
+}
+function show_programs() {
+	document.getElementById("right-side-videos").style.display = "none";
+	document.getElementById("right-side-history").style.display = "none";
+	document.getElementById("right-side-start").style.display = "none";
+	document.getElementById("right-side-posts").style.display = "none";
+	document.getElementById("right-side-support").style.display = "none";
+	
+	document.getElementById("right-side-progs").style.display = "flex";
+}
+function show_posts() {
+	document.getElementById("right-side-history").style.display = "none";
+	document.getElementById("right-side-start").style.display = "none";
+	document.getElementById("right-side-progs").style.display = "none";
+	document.getElementById("right-side-videos").style.display = "none";
+	document.getElementById("right-side-support").style.display = "none";
+	
+	document.getElementById("right-side-posts").style.display = "flex";
+}
+function show_videos() {
+	document.getElementById("right-side-history").style.display = "none";
+	document.getElementById("right-side-start").style.display = "none";
+	document.getElementById("right-side-progs").style.display = "none";
+	document.getElementById("right-side-posts").style.display = "none";
+	document.getElementById("right-side-support").style.display = "none";
+	document.getElementById("right-side-videos").style.display = "flex";
+}
+</script>
+<body>
+	<h2 style="color: blue; background-color: lightblue; text-align: center;">Сайт Юрия</h2>
+	<p>Добро пожаловать на сайт Юрия. Юрий - программист данного документа.
+	<br>Здесь я буду публиковать свои блоги, видео, посты а также программы.
+	<br>Коментарии к видео публикуются на сайт при помощи написания коментария на почту domin.yak@yandex.ru, и я его добавлю в код сайта.</p>
+	<p>Синяя подчёркнутая линяя - ссылка на вложенный документ; нажав на неё вы перейдёте в документ на который ссылка указывает.
+	<br>Зелёная подчёркнутая линяя - ссылка на вложенный файл; нажав на неё вам на компьютер скачается файл на который указывает ссылка (через интернет).
+	<br>Красная подчёркнутая линяя - ссылка на древо каталогов; нажав на неё в браузере откроется папка, и браузер превратится в своеобразный файловый менеджер.
+	<br>Кнопка синего цвета на главной странице (здесь) - изменит какой то блок текста на тот блок текста, который указывает.</p>
+	<a href="/somafop/" style="color: red;">Soma Free Opensource Project</a>
+	
+	<div class="split-container">
+		<div class="left-side">
+			<button style="color: white; background-color: darkblue;" onclick="show_historyofauthor()">История автора</button>
+			<button style="color: white; background-color: darkblue;" onclick="show_programs()">Программы</button>
+			<button style="color: white; background-color: darkblue;" onclick="show_posts()">Посты</button>
+			<button style="color: white; background-color: darkblue;" onclick="show_videos()">Видео</button>
+			<button style="color: white; background-color: darkblue;" onclick="show_support()">Поддержать автора</button>
+		</div>
+		<div id="right-side-start">
+			<p>Нажмите любую интересующую кнопку в левом столбце.</p>
+		</div>
+		<div id="right-side-history" style="display: none;">
+			<p>Итак. Сейчас поведую краткую историю о себе, пока её будет мало но со временем данное откровение будет редактироватся.
+			<br>
+			<br>Я родился в 2014 году. С самого детства я был погружён в цифровой мир.
+			<br>Не то что бы прям погружён, но всё же технологии меня окружали с самого рождения.
+			<br>Планшет (который мне возможно купили в Крыму, так как документация там на украинском) и компьютер. 
+			<br>Это у меня уже было считай сразу после рождения.
+			<br>Потом я школьником стал начальных классов и тогда, мне понравилась анимация.
+			<br>Я очень хорошо рисовал мультфильмы, и никогда не ратоскопировал.
+			<br>И однажды мне Youtube (внутри MS Windows 10) ещё когда мне было 10 лет показал плейлист по языку программирования C#.
+			<br>И пошло программиское моё ремесло поехало. Я сначала писал на высокоуровневых языках но потом спускался всё ниже и ниже.
+			<br>И чём ниже тем больше мне нравилось, в итоге в 11 я, даже не дочитав не Столярова не AMD Architecture's Programming Manual (за которые я тогда взялся),
+			<br>я сел писать загрузчик. StackOverflow, Gemini и OSDev, и я просто переписывал разные куски кода и от одного, и от второго и от третьего.
+			<br>И кинул я тогда этот загрузчик перейдя на С. И Столярова я кинул и AMD Architecture's Programmers Manual я кинул.
+			<br>И теперь когда я уже повзрослел, чуть, я решил что буду сначала всё читать, а потом только приступать к обучению-практике, попутно программируя простые программы на С.
+			<br>Ну и свою ОС я создать обязан. Я очень люблю  программирование операционных систем, поэтому скоро (близжайшие 2 года) на сайте в разделе Soma Free Opensource Project 
+			<br>будут нормальные файлы заместо заглушек.
+			<br>Потом мне резко начало симпатизировать православное христианство, я начал верить в Бога, читать Библию и жить по заповедям Христа Иисуса нашего.</p>
+		</div>
+		<div id="right-side-progs" style="display: none;">
+			<p>В разделе программы, как ни странно, хранятся программы, и, как уже понятно, мои.
+			<br>Грубо говоря, прогрммы некоторые наговнокодены, но ничего, не зря же есть cvs или git.
+			<br> 
+			<br><a href="/programs/arithmetic_mean_calculator" style="color: green;">Калькулятор среднего арифметического</a>
+			<br><a href="/programs/percentum_calculator" style="color: green;">Калькулятор процентов</a>
+			<br><a href="/programs/testingthings.tar.xz" style="color: green;">Мелкие тесты</a><br></r><a href="/apps/howtotestthings.html">(Как использовать мелкие тесты)</a></p>
+		</div>
+		<div id="right-side-posts" style="display: none;">
+			<p>Посты будут публиковатся в виде отдельных страниц где просто текст поста и кнопка возврата на главную страницу.
+			<br>
+			<br>Постов пока больше нет...</p>
+		</div>
+		<div id="right-side-videos" style="display: none;">
+			<p>Те видео что и на ютубе, если вдруг доступ к ютубу я потеряю, все видео - здесь.
+			<br>
+			<br><a href="/videos/Сегодня.mkv" style="color: green;">Сегодня.mkv</a>
+			<br><a href="/videos/Мои_программы.mkv" style="color: green;">Мои_программы.mkv</a>
+			<br><a href="/videos/программирую_pcspkr_obspart.mkv" style="color: green;">программирую_pcspkr_obspart.mkv</a></p>
+		</div>
+		<div id="right-side-support" style="display: none;">
+			<p>Поддержка здесь осуществляется не деньгами
+			<br>
+			<br>Здесь поддержка это отправка улучшений исходного кода, это отправка старого б/у хардвара и элементарная похвала.
+			<br>По исходникам на почту domin.yak@yandex.ru.</p>
+		</div>
+	</div>
+	<div class="text">
+		<p>Я создам свою операционную систему, и да, она будет с VGA графикой, разрешением 640х480 и 32 битная.
+		<br>"Почему такое маленькое разрешение?" потому, что для VGA - это максимум.
+		<br>"Почему VGA, давным давно есть VBE и видеокарты?" потому, что так как я новичок 
+		<br>(а VBE сложнее VGA в использовании), я пока останавлюсь на VGA, а драйвера под ОС школьника 13 лет
+		<br>ни AMD, ни Intel, ни NVIDIA писать не будут.
+		<br>Да и тем более графика, что держится на процессоре, будет работать везде (чего я хочу добится в первую очередь)
+		<br>Минимум для ОС - 64 мб памяти, для DOS - 512 кб памяти.
+		<br>Я не люблю современные ОС за их огромность, я считаю что чем больше ОС - тем сложнее её архитектуру
+		<br>удержать в голове. Да, я считаю что нужно, чтобы архитектура ОС умещалась в голове, и когда что то
+		<br>происходит внутри ОС нужно помнить, что в коде на самом деле происходит то.
+		<br>Я считаю что если ОС не получится запустить на старом Intel Pentium, то ОС плохо оптимизированна.
+		<br>Да, технологии двигаются вперёд, но у кого то на такие современные технологии нету денег, или возможности
+		<br>их купить. И в итоге таким людям приходится искать в интернете какую нибудь очень редкую ОС чтоб им на такое старое железо установить.
+		<br>Это плохо. Поэтому, как бы там технологии вперёд ни двигались, нужно хотя бы, хотя бы делать 2 выпуска новой ОС
+		<br>например, одну для новых ПК, другую для старых.
+		<br><img src="pics/somafooslooks.bmp" alt="how shall does soma foos look like" height="480" width="620">
+		<br>На картинке изображён примерный вид моей будующей ОС, я нарисовал это в Inkscape, и сделаю ОС похожей на то,
+		<br>что на картинке. Похоже на Windows 3.1, я решил так сделать потому, что заместо панели внизу окно посередине экономит место на экране с 
+		<br>маленьким разрешением. "А как же панель вверху?" она перекрывается окнами, то есть если увеличить окно на весь экран или просто перетащить
+		<br>окно на верхнюю панель, окно перекроит верхнюю панель.</p>
+	</div>
+</body>
+</html>
