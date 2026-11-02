@@ -51,24 +51,14 @@ body {
 <script>
 function show_support() {
 	document.getElementById("right-side-start").style.display = "none";
-	document.getElementById("right-side-history").style.display = "none";
 	document.getElementById("right-side-progs").style.display = "none";
 	document.getElementById("right-side-posts").style.display = "none";
 	document.getElementById("right-side-videos").style.display = "none";
 	document.getElementById("right-side-support").style.display = "flex";
 }
-function show_historyofauthor() {
-	document.getElementById("right-side-videos").style.display = "none";
-	document.getElementById("right-side-progs").style.display = "none";
-	document.getElementById("right-side-start").style.display = "none";
-	document.getElementById("right-side-posts").style.display = "none";
-	document.getElementById("right-side-support").style.display = "none";
 	
-	document.getElementById("right-side-history").style.display = "flex";
-}
 function show_programs() {
 	document.getElementById("right-side-videos").style.display = "none";
-	document.getElementById("right-side-history").style.display = "none";
 	document.getElementById("right-side-start").style.display = "none";
 	document.getElementById("right-side-posts").style.display = "none";
 	document.getElementById("right-side-support").style.display = "none";
@@ -76,7 +66,6 @@ function show_programs() {
 	document.getElementById("right-side-progs").style.display = "flex";
 }
 function show_posts() {
-	document.getElementById("right-side-history").style.display = "none";
 	document.getElementById("right-side-start").style.display = "none";
 	document.getElementById("right-side-progs").style.display = "none";
 	document.getElementById("right-side-videos").style.display = "none";
@@ -85,7 +74,6 @@ function show_posts() {
 	document.getElementById("right-side-posts").style.display = "flex";
 }
 function show_videos() {
-	document.getElementById("right-side-history").style.display = "none";
 	document.getElementById("right-side-start").style.display = "none";
 	document.getElementById("right-side-progs").style.display = "none";
 	document.getElementById("right-side-posts").style.display = "none";
@@ -105,7 +93,6 @@ function show_videos() {
 	
 	<div class="split-container">
 		<div class="left-side">
-			<button style="color: white; background-color: darkblue;" onclick="show_historyofauthor()">История автора</button>
 			<button style="color: white; background-color: darkblue;" onclick="show_programs()">Программы</button>
 			<button style="color: white; background-color: darkblue;" onclick="show_posts()">Посты</button>
 			<button style="color: white; background-color: darkblue;" onclick="show_videos()">Видео</button>
@@ -113,26 +100,6 @@ function show_videos() {
 		</div>
 		<div id="right-side-start">
 			<p>Нажмите любую интересующую кнопку в левом столбце.</p>
-		</div>
-		<div id="right-side-history" style="display: none;">
-			<p>Итак. Сейчас поведую краткую историю о себе, пока её будет мало но со временем данное откровение будет редактироватся.
-			<br>
-			<br>Я родился в 2014 году. С самого детства я был погружён в цифровой мир.
-			<br>Не то что бы прям погружён, но всё же технологии меня окружали с самого рождения.
-			<br>Планшет (который мне возможно купили в Крыму, так как документация там на украинском) и компьютер. 
-			<br>Это у меня уже было считай сразу после рождения.
-			<br>Потом я школьником стал начальных классов и тогда, мне понравилась анимация.
-			<br>Я очень хорошо рисовал мультфильмы, и никогда не ратоскопировал.
-			<br>И однажды мне Youtube ещё когда мне было 10 лет показал плейлист по языку программирования C#.
-			<br>И пошло программиское моё ремесло поехало. Я сначала писал на высокоуровневых языках но потом спускался всё ниже и ниже.
-			<br>И чём ниже тем больше мне нравилось, в итоге в 11 я, даже не дочитав не Столярова не AMD Architecture's Programming Manual (за которые я тогда взялся),
-			<br>я сел писать загрузчик. StackOverflow, Gemini и OSDev, и я просто переписывал разные куски кода и от одного, и от второго и от третьего.
-			<br>И кинул я тогда этот загрузчик перейдя на С. И Столярова я кинул и AMD Architecture's Programmers Manual я кинул.
-			<br>И теперь когда я уже повзрослел, чуть, я решил что буду сначала всё читать, а потом только приступать к обучению-практике, попутно программируя простые программы на С.
-			<br>Ну и свою ОС я создать обязан. Я очень люблю  программирование операционных систем, поэтому скоро (близжайшие 2 года) на сайте в разделе Soma Free Opensource Project 
-			<br>будут нормальные файлы заместо заглушек.
-			<br>Потом мне резко начало симпатизировать православное христианство, я начал верить в Бога, читать Библию и жить по заповедям Христа Иисуса нашего.
-			<br>И вернулся я к Столярову. f</p>
 		</div>
 		<div id="right-side-progs" style="display: none;">
 			<p>В разделе программы, как ни странно, хранятся программы, и, как уже понятно, мои.
